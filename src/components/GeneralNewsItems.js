@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import SampleImage from '../assets/SampleNews.jpg';
-import { ForeignEx } from '../components/ForeignEx';
+// import { ForeignEx } from '../components/ForeignEx';
 
 export const GeneralNewsItems = () => {
   const [value, setValue] = useState([]);
@@ -70,7 +70,7 @@ export const GeneralNewsItems = () => {
               ))}
             </div>
           </div>
-          <ForeignEx />
+          {/* <ForeignEx /> */}
         </div>
       </div>
     </div>

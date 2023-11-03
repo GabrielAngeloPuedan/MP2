@@ -12,7 +12,7 @@ export const SearchResults = () => {
       if (query) {
         try {
           const response = await fetch(
-            `https://gnews.io/api/v4/search?q=${query}&token=c80ea808b4443ac718aaced8ba3d08f6`
+            `https://gnews.io/api/v4/search?q=${query}&lang=en&token=c80ea808b4443ac718aaced8ba3d08f6`
           );
           if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -41,7 +41,7 @@ export const SearchResults = () => {
             </div>
 
             <div className="flex flex-row flex-wrap -mx-3">
-              {articles.map((article, index) => (
+              {articles.slice(0, 9).map((article, index) => (
                 <div
                   className="flex-shrink max-w-full w-full sm:w-1/3 lg:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100"
                   key={index}
