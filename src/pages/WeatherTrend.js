@@ -22,28 +22,6 @@ export const WeatherTrend = () => {
     }
   };
 
-  const getLocation = async () => {
-    try {
-      const position = await new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject, {
-          timeout: 10000, // 10 seconds timeout
-        });
-      });
-
-      const { latitude, longitude } = position.coords;
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=1fa9ff4126d95b8db54f3897a208e91c`
-      );
-      const data = await response.json();
-      const location = data.name;
-      setCity(location);
-      fetchWeatherData(location);
-    } catch (error) {
-      console.error('Error getting current location or weather:', error);
-      setWeather(null);
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       if (!city) {
@@ -55,6 +33,28 @@ export const WeatherTrend = () => {
         }
       } else {
         await fetchWeatherData(city);
+      }
+    };
+
+    const getLocation = async () => {
+      try {
+        const position = await new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject, {
+            timeout: 10000, // 10 seconds timeout
+          });
+        });
+
+        const { latitude, longitude } = position.coords;
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=1fa9ff4126d95b8db54f3897a208e91c`
+        );
+        const data = await response.json();
+        const location = data.name;
+        setCity(location);
+        fetchWeatherData(location);
+      } catch (error) {
+        console.error('Error getting current location or weather:', error);
+        setWeather(null);
       }
     };
 
