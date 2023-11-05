@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   SearchBar,
   TimeandLoc,
@@ -12,15 +12,40 @@ export const WeatherTrend = () => {
   const [units] = useState('metric');
   const [weather, setWeather] = useState(null);
 
-  const fetchWeatherData = async (location) => {
+  const fetchWeatherData = useCallback(
+    async (location) => {
+      try {
+        const data = await getFormattedWeatherData({ q: location, units });
+        setWeather(data);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        setWeather(null);
+      }
+    },
+    [units]
+  );
+
+  const getLocation = useCallback(async () => {
     try {
-      const data = await getFormattedWeatherData({ q: location, units });
-      setWeather(data);
+      const position = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject, {
+          timeout: 10000, // 10 seconds timeout
+        });
+      });
+
+      const { latitude, longitude } = position.coords;
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=1fa9ff4126d95b8db54f3897a208e91c`
+      );
+      const data = await response.json();
+      const location = data.name;
+      setCity(location);
+      fetchWeatherData(location);
     } catch (error) {
-      console.error('Error fetching weather data:', error);
+      console.error('Error getting current location or weather:', error);
       setWeather(null);
     }
-  };
+  }, [fetchWeatherData]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,30 +61,8 @@ export const WeatherTrend = () => {
       }
     };
 
-    const getLocation = async () => {
-      try {
-        const position = await new Promise((resolve, reject) => {
-          navigator.geolocation.getCurrentPosition(resolve, reject, {
-            timeout: 10000, // 10 seconds timeout
-          });
-        });
-
-        const { latitude, longitude } = position.coords;
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=1fa9ff4126d95b8db54f3897a208e91c`
-        );
-        const data = await response.json();
-        const location = data.name;
-        setCity(location);
-        fetchWeatherData(location);
-      } catch (error) {
-        console.error('Error getting current location or weather:', error);
-        setWeather(null);
-      }
-    };
-
     fetchData();
-  }, [city, units, fetchWeatherData, getLocation]); // Include fetchWeatherData and getLocation in the dependency array
+  }, [city, units, fetchWeatherData, getLocation]); // Include memoized functions in the dependency array
 
   const handleSearch = (newCity) => {
     setCity(newCity);
