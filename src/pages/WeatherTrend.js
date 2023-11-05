@@ -45,17 +45,21 @@ export const WeatherTrend = () => {
   };
 
   useEffect(() => {
-    if (!city) {
-      if (navigator.geolocation) {
-        getLocation();
+    const fetchData = async () => {
+      if (!city) {
+        if (navigator.geolocation) {
+          await getLocation();
+        } else {
+          console.log('Geolocation is not supported by this browser.');
+          setWeather(null);
+        }
       } else {
-        console.log('Geolocation is not supported by this browser.');
-        setWeather(null);
+        await fetchWeatherData(city);
       }
-    } else {
-      fetchWeatherData(city);
-    }
-  }, [city, units]);
+    };
+
+    fetchData();
+  }, [city, units, fetchWeatherData, getLocation]); // Include fetchWeatherData and getLocation in the dependency array
 
   const handleSearch = (newCity) => {
     setCity(newCity);
