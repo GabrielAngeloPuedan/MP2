@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 // import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 
-export const SearchBar = ({ setQuery, units, setUnits }) => {
-  const [city, setCity] = useState('');
+export const SearchBar = ({ handleSearch }) => {
+  const [searchInput, setSearchInput] = useState('');
 
-  const handleUnitsChange = (e) => {
-    const selectedUnit = e.currentTarget.name;
-    if (units !== selectedUnit) setUnits(selectedUnit);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(searchInput);
   };
 
-  const handleSearchClick = () => {
-    if (city !== '') setQuery({ q: city });
-  };
   return (
-    <form className="flex items-center">
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center"
+    >
       <label className="sr-only">Search</label>
       <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -34,13 +34,12 @@ export const SearchBar = ({ setQuery, units, setUnits }) => {
           </svg>
         </div>
         <input
-          value={city}
-          onChange={(e) => setCity(e.currentTarget.value)}
-          onClick={handleSearchClick}
           type="text"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          placeholder="Enter a city"
           id="voice-search"
           className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  bg-slate-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 capitalize placeholder:lowercase focus:outline-none"
-          placeholder="Search city..."
           required
         />
         <button
@@ -73,7 +72,6 @@ export const SearchBar = ({ setQuery, units, setUnits }) => {
         <button
           name="metric"
           className="text-xl text-white font-light"
-          onClick={handleUnitsChange}
         >
           °C
         </button>
@@ -81,7 +79,6 @@ export const SearchBar = ({ setQuery, units, setUnits }) => {
         <button
           name="imperial"
           className="text-xl text-white font-light"
-          onClick={handleUnitsChange}
         >
           °F
         </button>

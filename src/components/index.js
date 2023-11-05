@@ -30,3 +30,6 @@ export { WNMoreTopStories } from './WNMoreTopStories';
 export { SearchCard } from './SearchCard';
 export { SearchPage } from './SearchPage';
 export { SearchResults } from './SearchResults';
+export { NestedSportsandEnt } from './NestedSportsandEnt';
+export { NestedColum2 } from './NestedColum2';
+export { MoreSportsNews } from './MoreSportsNews';

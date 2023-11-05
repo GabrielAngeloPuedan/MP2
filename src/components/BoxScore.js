@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useMediaQuery } from 'react-responsive';
 
 export const BoxScore = () => {
   const [value, setValue] = useState([]);
+  const isMobile = useMediaQuery({ maxWidth: 767 }); // Adjust the value as per your requirements
 
   const api = async () => {
     try {
@@ -23,33 +28,41 @@ export const BoxScore = () => {
     api();
   }, []);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: isMobile ? 1 : 4, // Adjust number of cards to show based on screen size
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
+
   return (
     <main>
-      <section className="flex flex-row max-w-7xl mx-auto gap-3 py-7">
-        {value.slice(0, 4).map((data, key) => (
+      <Slider {...settings}>
+        {value.map((data, key) => (
           <div key={key}>
-            <div
-              href="/"
-              className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
-            >
-              <div className="flex flex-col justify-between p-4 leading-normal">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  Final Score
-                </h5>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  {data.date}
-                </p>
-                <p className="mb-3 font-bold  text-gray-700 dark:text-gray-400">
-                  {data.home_team.full_name} : {data.home_team_score}
-                </p>
-                <p className="mb-3 font-bold text-gray-700 dark:text-gray-400">
-                  {data.visitor_team.full_name} : {data.visitor_team_score}
+            <div className="score-box bg-black p-4 m-4">
+              <div className="score-box-content">
+                <div className="teams">
+                  <div className="team">
+                    <p className="text-white">{data.home_team.full_name}</p>
+                    <p className="text-white">{data.home_team_score}</p>
+                  </div>
+                  <div className="team">
+                    <p className="text-white">{data.visitor_team.full_name}</p>
+                    <p className="text-white">{data.visitor_team_score}</p>
+                  </div>
+                </div>
+                <p className="game-details text-white">
+                  {new Date(data.date).toLocaleDateString()}
                 </p>
               </div>
             </div>
           </div>
         ))}
-      </section>
+      </Slider>
     </main>
   );
 };

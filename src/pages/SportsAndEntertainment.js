@@ -1,12 +1,12 @@
 import React from 'react';
-import { BoxScore } from '../components/BoxScore';
-import { NestedColumn } from '../components/NestedColumn';
+import { BoxScore, NestedColumn, NestedSportsandEnt } from '../components';
 
 export const SportsAndEntertainment = () => {
   return (
     <div>
       <BoxScore />
       <NestedColumn />
+      <NestedSportsandEnt />
     </div>
   );
 };
