@@ -33,3 +33,5 @@ export { SearchResults } from './SearchResults';
 export { NestedSportsandEnt } from './NestedSportsandEnt';
 export { NestedColum2 } from './NestedColum2';
 export { MoreSportsNews } from './MoreSportsNews';
+export { CreatorCard } from './CreatorCard';
+export { AboutUsPage } from './AboutUsPage';

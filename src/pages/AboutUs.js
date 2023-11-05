@@ -1,5 +1,10 @@
 import React from 'react';
+import { AboutUsPage } from '../components';
 
 export const AboutUs = () => {
-  return <div>AboutUs</div>;
+  return (
+    <div>
+      <AboutUsPage />
+    </div>
+  );
 };

@@ -9,7 +9,7 @@ import getFormattedWeatherData from '../WeatherJS/AllWeatherData';
 
 export const WeatherTrend = () => {
   const [city, setCity] = useState('');
-  const [units, setUnits] = useState('metric');
+  const [units] = useState('metric');
   const [weather, setWeather] = useState(null);
 
   const fetchWeatherData = async (location) => {
