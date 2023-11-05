@@ -1,5 +1,3 @@
-// ... (existing code)
-
 import React, { useState, useEffect } from 'react';
 import {
   SearchBar,
@@ -10,26 +8,26 @@ import {
 import getFormattedWeatherData from '../WeatherJS/AllWeatherData';
 
 export const WeatherTrend = () => {
-  const [city, setCity] = useState('Manila'); // Default city
+  const [query, setQuery] = useState('Manila');
   const [units] = useState('metric');
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
-    const fetchWeather = async () => {
+    const fetchWeather = async (locationQuery) => {
       try {
-        const data = await getFormattedWeatherData({ q: city, units });
+        const data = await getFormattedWeatherData({ q: locationQuery, units });
         setWeather(data);
       } catch (error) {
-        // Handle errors like invalid city, etc.
         console.error('Error fetching weather data:', error);
+        setWeather({});
       }
     };
 
-    fetchWeather();
-  }, [city, units]);
+    fetchWeather(query);
+  }, [query, units]);
 
-  const handleSearch = (newCity) => {
-    setCity(newCity);
+  const handleSearch = (newQuery) => {
+    setQuery(newQuery);
   };
 
   return (
@@ -37,19 +35,14 @@ export const WeatherTrend = () => {
       <SearchBar handleSearch={handleSearch} />
       <TimeandLoc weather={weather} />
       <TempAndDetails weather={weather} />
-
-      {weather && (
-        <>
-          <WeatherForecast
-            title="hourly forecast"
-            items={weather.hourly}
-          />
-          <WeatherForecast
-            title="weekly forecast"
-            items={weather.daily}
-          />
-        </>
-      )}
+      <WeatherForecast
+        title="hourly forecast"
+        items={weather.hourly}
+      />
+      <WeatherForecast
+        title="weekly forecast"
+        items={weather.daily}
+      />
     </div>
   );
 };

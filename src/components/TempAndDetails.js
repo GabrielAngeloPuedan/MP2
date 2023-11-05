@@ -3,7 +3,7 @@ import { WiThermometer, WiRaindrop, WiStrongWind } from 'react-icons/wi';
 import { iconUrlFromCode } from '../WeatherJS/AllWeatherData';
 
 export const TempAndDetails = ({
-  weather: { details, icon, speed, humidity, feels_like },
+  weather: { details, temp, icon, speed, humidity, feels_like },
 }) => {
   return (
     <div>
@@ -17,7 +17,7 @@ export const TempAndDetails = ({
           alt=""
           className="w-20"
         />
-        <p className="text-5xl"> 34°</p>
+        <p className="text-5xl">{`${Math.round(temp)}°`}</p>
         <div className="flex flex-col space-y-2">
           <div className="flex font-light text-sm items-center justify-center">
             <WiThermometer
@@ -25,7 +25,9 @@ export const TempAndDetails = ({
               className="mr-1"
             />
             Feels like:
-            <span className="font-medium ml-1">{`${feels_like}°`}</span>
+            <span className="font-medium ml-1">{`${Math.round(
+              feels_like
+            )}°`}</span>
           </div>
           <div className="flex font-light text-sm items-center justify-center">
             <WiRaindrop
@@ -33,7 +35,9 @@ export const TempAndDetails = ({
               className="mr-1"
             />
             Humidity:
-            <span className="font-medium ml-1">{`${humidity}%`}</span>
+            <span className="font-medium ml-1">{`${Math.round(
+              humidity
+            )}%`}</span>
           </div>
           <div className="flex font-light text-sm items-center justify-center">
             <WiStrongWind
@@ -41,7 +45,9 @@ export const TempAndDetails = ({
               className="mr-1"
             />
             Wind Speed:
-            <span className="font-medium ml-1">{`${speed} km/h`}</span>
+            <span className="font-medium ml-1">{`${Math.round(
+              speed
+            )} km/h`}</span>
           </div>
         </div>
       </div>
