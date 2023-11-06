@@ -8,7 +8,7 @@ export const GeneralNewsItems = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=10&apikey=6957b115348065c140274c333476bbc5'
+        'https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=10&apikey=6b3f02d607dce7c91d34940adcb2876e'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {

@@ -70,8 +70,6 @@ export const ExchangeRates = () => {
 
   return (
     <div className="exchange-rates-container">
-      {' '}
-      {/* Added a class for the wrapping container */}
       <div className="bg-white p-6">
         <div className="mx-auto px-3 sm:px-4 xl:px-2">
           <div

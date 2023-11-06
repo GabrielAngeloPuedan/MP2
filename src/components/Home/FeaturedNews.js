@@ -8,7 +8,7 @@ export const FeaturedNews = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/search?q=general&lang=en&country=any&apikey=6957b115348065c140274c333476bbc5'
+        'https://gnews.io/api/v4/search?q=general&lang=en&country=any&apikey=6b3f02d607dce7c91d34940adcb2876e'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {

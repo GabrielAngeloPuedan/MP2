@@ -6,8 +6,10 @@ export const TempAndDetails = ({
   weather: { temp, icon, speed, humidity, feels_like },
 }) => {
   return (
-    <div className="rounded-lg border-2 border-blue-500 p-5 bg-white bg-opacity-25">
-      <div className="flex items-center justify-between text-white py-3 space-x-4">
+    <div className="glassy-container">
+      <div className="flex items-center justify-center py-6 text-xl text-cyan-300 bg"></div>
+
+      <div className="flex flex-row items-center justify-between text-white py-3">
         <img
           src={iconUrlFromCode(icon)}
           alt=""

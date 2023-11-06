@@ -6,7 +6,7 @@ export const C3Business = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=any&max=10&apikey=6957b115348065c140274c333476bbc5'
+        'https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=any&max=10&apikey=b18ce22b70a5e835d5a51b4dad5c1ebf'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NestedColum2 } from './NestedColumn2';
+import { TopSports } from './TopSports';
 
 export const NestedColumn = () => {
   const [value, setValue] = useState([]);
@@ -7,7 +8,7 @@ export const NestedColumn = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/top-headlines?category=sports&lang=en&country=ph&max=10&apikey=f9f38c9e7d539a4322386cf01130f046'
+        'https://gnews.io/api/v4/top-headlines?category=sports&lang=en&country=ph&max=10&apikey=ca47c282d1e56b80c69b61866b5b4122'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {
@@ -73,6 +74,7 @@ export const NestedColumn = () => {
             </div>
             <NestedColum2 />
           </div>
+            <TopSports />
         </div>
       ))}
     </main>

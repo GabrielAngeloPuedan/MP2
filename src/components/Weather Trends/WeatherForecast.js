@@ -3,7 +3,7 @@ import { iconUrlFromCode } from './AllWeatherData/AllWeatherData';
 
 export const WeatherForecast = ({ title, items }) => {
   return (
-    <div className="rounded-lg border-2 border-blue-500 p-5 bg-white bg-opacity-25">
+    <div className="glassy-container">
       <div className="flex items-center justify-start mt-6">
         <p className="text-white font-medium uppercase">{title}</p>
       </div>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
+import { TopEnt } from './TopEnt';
 export const NestedSportsandEnt = () => {
   const [value, setValue] = useState([]);
 
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/top-headlines?lang=en&category=entertainment&apikey=78c3dada53262a322dfac923666e90f3&country=ph'
+        'https://gnews.io/api/v4/top-headlines?lang=en&category=entertainment&apikey=ca47c282d1e56b80c69b61866b5b4122&country=ph'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {
@@ -34,7 +34,7 @@ export const NestedSportsandEnt = () => {
             <div className="w-full py-3">
               <h2 className="text-gray-800 text-2xl font-bold">
                 <span className="inline-block h-5 border-l-3 border-red-600 mr-2"></span>
-                Entertainement- Top Headlines
+                Entertainment - Top Headlines
               </h2>
             </div>
             <div className="flex flex-row flex-wrap -mx-3">
@@ -105,7 +105,7 @@ export const NestedSportsandEnt = () => {
                                 <a
                                   className="text-gray-500"
                                   href={a.url}
-                                >
+                                  >
                                   <span className="inline-block h-3 border-l-2 border-red-600 mr-2"></span>
                                   Read more
                                 </a>
@@ -120,6 +120,7 @@ export const NestedSportsandEnt = () => {
               </section>
             </div>
           </div>
+          <TopEnt/>
         </div>
       ))}
     </main>

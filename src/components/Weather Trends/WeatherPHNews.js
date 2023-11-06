@@ -6,7 +6,7 @@ export const WeatherPHNews = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/search?q=weather&lang=en&country=ph&max=10&apikey=a1e0f0c0bc8075c469c7da8a8a17f2e8'
+        'https://gnews.io/api/v4/search?q=weather&lang=en&country=ph&max=10&apikey=b041085f7d1c8f24036f4d3c5fc118a0'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {

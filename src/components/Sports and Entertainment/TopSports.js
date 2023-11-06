@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-
-export const WNPopular = () => {
+import { useState, useEffect } from 'react';
+export const TopSports = () => {
   const [value, setValue] = useState([]);
 
   const api = async () => {
     try {
       let response = await fetch(
-        'https://newsdata.io/api/1/news?apikey=pub_32187bd5bdcecfa672cc03ccb0509c12ed6f7&image=1&category=world&language=en'
+        'https://newsdata.io/api/1/news?apikey=pub_32187bd5bdcecfa672cc03ccb0509c12ed6f7&image=1&category=sports&language=en'
       );
       let result = await response.json();
       if (result.results && result.results.length > 0) {
@@ -24,11 +23,11 @@ export const WNPopular = () => {
   }, []);
 
   return (
-    <div className="flex-shrink max-w-full w-full lg:w-1/3 lg:pr-8 lg:pt-14 lg:pb-8 order-first">
+    <div className="flex-shrink max-w-full w-full lg:w-1/3 lg:pr-8 lg:pt-14 lg:pb-8 order-last">
       <div className="w-full bg-white">
         <div className="mb-6">
           <div className="p-4 bg-gray-100">
-            <h2 className="text-lg font-bold">Top Read</h2>
+            <h2 className="text-lg font-bold">Top Sports</h2>
           </div>
           <ul className="post-number">
             {value.slice(0, 10).map((a, key) => (
@@ -38,7 +37,7 @@ export const WNPopular = () => {
               >
                 <a
                   className="text-lg font-bold px-6 py-3 flex flex-row items-center"
-                  href={a.title}
+                  href={a.link}
                 >
                   {a.title}
                 </a>

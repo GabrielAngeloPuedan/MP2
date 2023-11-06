@@ -6,7 +6,7 @@ export const MostPopular = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://newsapi.org/v2/top-headlines?q=world&apiKey=39ec76a824884acba0f2a0a813657dc3'
+        'https://newsapi.org/v2/everything?q=world&apiKey=39ec76a824884acba0f2a0a813657dc3'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {

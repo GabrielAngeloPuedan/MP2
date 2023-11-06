@@ -36,7 +36,7 @@ export const NewsItems4 = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        'https://newsapi.org/v2/everything?q=world&apiKey=39ec76a824884acba0f2a0a813657dc3'
+        'https://newsapi.org/v2/everything?q=lifestyle&apiKey=39ec76a824884acba0f2a0a813657dc3'
       );
       const result = await response.json();
       if (result.articles && result.articles.length > 0) {

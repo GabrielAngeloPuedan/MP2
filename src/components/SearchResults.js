@@ -41,7 +41,7 @@ export const SearchResults = () => {
             </div>
 
             <div className="flex flex-row flex-wrap -mx-3">
-              {articles.slice(0, 9).map((article, index) => (
+              {articles.slice(0, 8).map((article, index) => (
                 <div
                   className="flex-shrink max-w-full w-full sm:w-1/3 lg:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100"
                   key={index}
