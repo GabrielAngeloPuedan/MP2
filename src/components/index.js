@@ -33,6 +33,6 @@ export { SearchResults } from './SearchResults';
 export { NestedSportsandEnt } from './Sports and Entertainment/NestedSportsandEnt';
 export { NestedColum2 } from './Sports and Entertainment/NestedColumn2';
 export { MoreSportsNews } from './Sports and Entertainment/MoreSportsNews';
-export { AboutUsPage } from './About Us/AboutUsPage';
+export { AboutUsPage } from '../components/AboutUsPage';
 export { WeatherWNews } from './Weather Trends/WeatherWNews';
 export { WeatherPHNews } from './Weather Trends/WeatherPHNews';

@@ -1,6 +1,6 @@
 import React from 'react';
-import Puedan from '/MP2_UtilizingReactTailwindCss/NewsWebsite/src/assets/Puedan.jpg';
-import Romero from '/MP2_UtilizingReactTailwindCss/NewsWebsite/src/assets/Romero.jpg';
+import Puedan from '../assets/Puedan.jpg';
+import Romero from '../assets/Romero.jpg';
 
 export const AboutUsPage = () => {
   return (
