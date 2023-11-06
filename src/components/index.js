@@ -36,3 +36,4 @@ export { MoreSportsNews } from './Sports and Entertainment/MoreSportsNews';
 export { AboutUsPage } from '../components/AboutUsPage';
 export { WeatherWNews } from './Weather Trends/WeatherWNews';
 export { WeatherPHNews } from './Weather Trends/WeatherPHNews';
+export { ExchangeRates } from './Home/ExchangeRates';

@@ -1,0 +1,24 @@
+.slick-prev,
+.slick-next {
+  color: black;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.slick-prev {
+  left: -20px;
+}
+.slick-next {
+  right: -20px;
+}
+.slick-slider .slick-prev,
+.slick-slider .slick-next {
+  display: none;
+}
+.slick-slider .slick-list {
+  overflow: visible;
+}
