@@ -6,7 +6,7 @@ export const WNAfrica = () => {
   const fetchArticles = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/top-headlines?country=ng&lang=en&max=10&topic=africa&token=6957b115348065c140274c333476bbc5'
+        'https://gnews.io/api/v4/top-headlines?country=ng&lang=en&max=10&topic=africa&token=c378b28bb93bea17124e367fd09a7578'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {
@@ -59,6 +59,13 @@ export const WNAfrica = () => {
                 </a>
               </h3>
               <p className="text-gray-600 mt-2">{article.description}</p>
+              <a
+                className="text-gray-500"
+                href={article.url}
+              >
+                <span className="inline-block h-3 border-l-2 border-red-600 mr-2"></span>
+                Read more
+              </a>
             </div>
           ))}
         </div>

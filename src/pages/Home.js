@@ -5,6 +5,7 @@ import { FeaturedNews } from '../components/Home/FeaturedNews';
 import { GeneralNews } from '../components/Home/GeneralNews';
 import { HomeHeroSection } from '../components/Home/HomeHeroSection';
 import { TopStories } from '../components/Home/TopStories';
+import { ExchangeRates } from '../components/Home/ExchangeRates';
 
 export const Home = () => {
   const [items, setItems] = useState([]);
@@ -20,6 +21,7 @@ export const Home = () => {
 
   return (
     <main>
+      <ExchangeRates />
       <HomeHeroSection />
       <GeneralNews items={items} />
       <TopStories />

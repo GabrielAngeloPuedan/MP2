@@ -39,25 +39,17 @@ export const WeatherTrend = () => {
           <div className="mt-6 space-y-6 text-black">
             <TimeandLoc weather={weather} />
             <TempAndDetails weather={weather} />
-
-            <div className="glassy-card">
-              <h2 className="text-white text-xl mb-4">Hourly Forecast</h2>
-              <div className="text-white">
-                <WeatherForecast
-                  title="hourly forecast"
-                  items={weather.hourly}
-                />
-              </div>
+            <div className="text-white">
+              <WeatherForecast
+                title="hourly forecast"
+                items={weather.hourly}
+              />
             </div>
-
-            <div className="glassy-card">
-              <h2 className="text-white text-xl mb-4">Weekly Forecast</h2>
-              <div className="text-white">
-                <WeatherForecast
-                  title="weekly forecast"
-                  items={weather.daily}
-                />
-              </div>
+            <div className="text-white">
+              <WeatherForecast
+                title="weekly forecast"
+                items={weather.daily}
+              />
             </div>
           </div>
         </div>

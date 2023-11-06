@@ -1,18 +1,19 @@
 import React from 'react';
 import LOGOID from '../assets/LOGODI.png';
+import { LEGAL } from '../components/LEGAL';
 
 export const Footer = () => {
   return (
-    <footer class="bg-black text-gray-400">
+    <footer className="bg-black text-gray-400">
       <div
         id="footer-content"
-        class="relative pt-8 xl:pt-16 pb-6 xl:pb-12"
+        className="relative pt-8 xl:pt-16 pb-6 xl:pb-12"
       >
-        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2 overflow-hidden">
-          <div class="flex flex-wrap flex-row lg:justify-between -mx-3">
-            <div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-10">
-              <div class="flex items-center mb-2">
-                <span class="text-3xl leading-normal mb-2 font-bold text-gray-100 mt-2">
+        <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2 overflow-hidden">
+          <div className="flex flex-wrap flex-row lg:justify-between -mx-3">
+            <div className="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-10">
+              <div className="flex items-center mb-2">
+                <span className="text-3xl leading-normal mb-2 font-bold text-gray-100 mt-2">
                   The Daily Insights
                 </span>
                 <img
@@ -26,16 +27,16 @@ export const Footer = () => {
                 in-depth analysis and up-to-the-minute coverage across a wide
                 spectrum of global events and developments.
               </p>
-              <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
-                <li class="inline-block">
+              <ul className="space-x-3 mt-6 mb-6 Lg:mb-0">
+                <li className="inline-block">
                   <a
                     target="_blank"
-                    class="hover:text-gray-100"
+                    className="hover:text-gray-100"
                     rel="noopener noreferrer"
                     href="https://facebook.com"
                     title="Facebook"
                   >
-                    <i class="fab fa-facebook fa-2x"></i>
+                    <i className="fab fa-facebook fa-2x"></i>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2rem"
@@ -50,15 +51,15 @@ export const Footer = () => {
                   </a>
                 </li>
 
-                <li class="inline-block">
+                <li className="inline-block">
                   <a
                     target="_blank"
-                    class="hover:text-gray-100"
+                    className="hover:text-gray-100"
                     rel="noopener noreferrer"
                     href="https://twitter.com"
                     title="Twitter"
                   >
-                    <i class="fab fa-twitter fa-2x"></i>
+                    <i className="fab fa-twitter fa-2x"></i>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2rem"
@@ -73,15 +74,15 @@ export const Footer = () => {
                   </a>
                 </li>
 
-                <li class="inline-block">
+                <li className="inline-block">
                   <a
                     target="_blank"
-                    class="hover:text-gray-100"
+                    className="hover:text-gray-100"
                     rel="noopener noreferrer"
                     href="https://youtube.com"
                     title="Youtube"
                   >
-                    <i class="fab fa-youtube fa-2x"></i>
+                    <i className="fab fa-youtube fa-2x"></i>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2rem"
@@ -96,15 +97,15 @@ export const Footer = () => {
                   </a>
                 </li>
 
-                <li class="inline-block">
+                <li className="inline-block">
                   <a
                     target="_blank"
-                    class="hover:text-gray-100"
+                    className="hover:text-gray-100"
                     rel="noopener noreferrer"
                     href="https://instagram.com"
                     title="Instagram"
                   >
-                    <i class="fab fa-instagram fa-2x"></i>
+                    <i className="fab fa-instagram fa-2x"></i>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2rem"
@@ -128,69 +129,53 @@ export const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div class="flex-shrink max-w-full w-full lg:w-3/5 px-3">
-              <div class="flex flex-wrap flex-row">
-                <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                  <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
-                    Product
+            <div className="flex-shrink max-w-full w-full lg:w-3/5 px-3">
+              <div className="flex flex-wrap flex-row">
+                <div className="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
+                  <h4 className="text-base leading-normal mb-3 uppercase text-gray-100">
+                    Our Website
                   </h4>
                   <ul>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Landing</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">Landing</a>
                     </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Pages</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">World News</a>
                     </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Sections</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">Sports & Entertainment</a>
                     </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Sign Up</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">Weather Trends</a>
                     </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Login</a>
+                    <li className="py-1 hover:text-white">
+                      <button>
+                        <a href="https://kodego.ph/">About Us</a>
+                      </button>
                     </li>
                   </ul>
                 </div>
-                <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                  <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                <div className="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
+                  <h4 className="text-base leading-normal mb-3 uppercase text-gray-100">
                     Support
                   </h4>
                   <ul>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Documentation</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">Documentation</a>
                     </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Changelog</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">Changelog</a>
                     </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Tools</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">Tools</a>
                     </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Icons</a>
+                    <li className="py-1 hover:text-white">
+                      <a href="https://kodego.ph/">Icons</a>
                     </li>
                   </ul>
                 </div>
 
-                <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                  <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
-                    Legal
-                  </h4>
-                  <ul>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Privacy Policy</a>
-                    </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">Terms of Use</a>
-                    </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">License</a>
-                    </li>
-                    <li class="py-1 hover:text-white">
-                      <a href="/">GDPR</a>
-                    </li>
-                  </ul>
-                </div>
+                <LEGAL />
               </div>
             </div>
           </div>

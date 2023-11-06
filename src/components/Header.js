@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LOGODI from '../assets/LOGODI.png';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { ExchangeRates } from './Home/ExchangeRates';
+// import { ExchangeRates } from './Home/ExchangeRates';
 
 export const Header = () => {
   const [query, setQuery] = useState('');
@@ -24,7 +24,6 @@ export const Header = () => {
 
   return (
     <main>
-      <ExchangeRates />
       <nav className="bg-black border-gray-200 dark:bg-black">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link

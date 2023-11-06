@@ -6,7 +6,7 @@ export const WNMoreTopStories = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://newsdata.io/api/1/news?apikey=pub_3242940853309f42bef3fea891d5a2ab05644&image=1&language=en&category=tourism'
+        'https://newsdata.io/api/1/news?apikey=pub_3246441a556cb83a024ef83e41417d4c6195c&image=1&language=en&category=tourism'
       );
       let result = await response.json();
       if (result.results && result.results.length > 0) {
@@ -45,10 +45,11 @@ export const WNMoreTopStories = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {a.title}
+              <p className="text-gray-700 font-bold text-base">{a.title}</p>
             </a>
             <div className="px-6 py-4">
               <div className="font-bold text-xl px-2"></div>
+
               <p className="text-gray-700 text-base">{a.description}</p>
             </div>
             <div className="px-6 py-4">

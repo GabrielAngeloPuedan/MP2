@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useMediaQuery } from 'react-responsive';
+import './BoxScore.css';
 
 export const BoxScore = () => {
   const [value, setValue] = useState([]);
@@ -39,7 +40,7 @@ export const BoxScore = () => {
   };
 
   return (
-    <main>
+    <div className="box-score-container">
       <Slider {...settings}>
         {value.map((data, key) => (
           <div key={key}>
@@ -63,6 +64,6 @@ export const BoxScore = () => {
           </div>
         ))}
       </Slider>
-    </main>
+    </div>
   );
 };
