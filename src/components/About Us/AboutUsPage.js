@@ -1,5 +1,6 @@
 import React from 'react';
 import Puedan from '/MP2_UtilizingReactTailwindCss/NewsWebsite/src/assets/Puedan.jpg';
+import Romero from '/MP2_UtilizingReactTailwindCss/NewsWebsite/src/assets/Romero.jpg';
 
 export const AboutUsPage = () => {
   return (
@@ -29,7 +30,7 @@ export const AboutUsPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div className="border p-4 rounded-lg text-center">
           <img
-            src="/person2.jpg" // Image for person 2
+            src={Romero}
             alt="Person 2"
             className="rounded-full h-40 w-40 object-cover mx-auto mb-4"
           />
@@ -85,7 +86,7 @@ export const AboutUsPage = () => {
           <div className="md:w-1/2 text-center">
             <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
             <p className="text-lg mb-4">
-              Founded in [year], our website was born from the vision of
+              Founded in October 2023, our website was born from the vision of
               providing a platform for credible news and information. Since
               then, we have been committed to maintaining the highest standards
               in journalism.

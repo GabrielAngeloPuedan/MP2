@@ -6,13 +6,13 @@ export const WNLatestNews = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://newsapi.org/v2/everything?q=world&apiKey=64153f05e7c049d6ba06e84b92d12f92'
+        'https://newsdata.io/api/1/news?apikey=pub_3242940853309f42bef3fea891d5a2ab05644&image=1&category=politics&language=en'
       );
       let result = await response.json();
-      if (result.articles && result.articles.length > 0) {
-        setValue(result.articles);
+      if (result.results && result.results.length > 0) {
+        setValue(result.results);
       } else {
-        throw new Error('No articles found');
+        throw new Error('No results found');
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -31,10 +31,10 @@ export const WNLatestNews = () => {
             className="relative hover-img max-h-98 overflow-hidden"
             key={key}
           >
-            <a href={a.url}>
+            <a href={a.link}>
               <img
                 className="max-w-full w-full mx-auto h-auto"
-                src={a.urlToImage}
+                src={a.image_url}
                 alt={a.title}
               />
             </a>
@@ -48,10 +48,14 @@ export const WNLatestNews = () => {
                 {a.description}
               </p>
               <div className="pt-2">
-                <div className="text-gray-100">
+                <a
+                  className="text-gray-100 
+                "
+                  href={a.link}
+                >
                   <div className="inline-block h-3 border-l-2 border-red-600 mr-2"></div>
-                  Learn More
-                </div>
+                  Read more
+                </a>
               </div>
             </div>
           </div>

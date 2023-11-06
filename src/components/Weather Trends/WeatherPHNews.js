@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-export const WNFeatured = () => {
+export const WeatherPHNews = () => {
   const [value, setValue] = useState([]);
 
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/top-headlines?category=nation&lang=en&country=Any&max=10&apikey=6957b115348065c140274c333476bbc5'
+        'https://gnews.io/api/v4/search?q=weather&lang=en&country=ph&max=10&apikey=a1e0f0c0bc8075c469c7da8a8a17f2e8'
       );
       let result = await response.json();
       if (result.articles && result.articles.length > 0) {
@@ -31,12 +31,12 @@ export const WNFeatured = () => {
             <div className="w-full py-3">
               <h2 className="text-gray-800 text-2xl font-bold">
                 <span className="inline-block h-5 border-l-3 border-red-600 mr-2"></span>
-                Featured News
+                Weather Philippine News
               </h2>
             </div>
 
             <div className="flex flex-row flex-wrap -mx-3">
-              {value.slice(0, 4).map((a, key) => (
+              {value.slice(0, 8).map((a, key) => (
                 <div
                   className="flex-shrink max-w-full w-full sm:w-1/3 lg:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100"
                   key={key}

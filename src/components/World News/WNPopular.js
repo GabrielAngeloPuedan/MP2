@@ -6,13 +6,13 @@ export const WNPopular = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=any&max=10&apikey=6957b115348065c140274c333476bbc5'
+        'https://newsdata.io/api/1/news?apikey=pub_3242940853309f42bef3fea891d5a2ab05644&image=1&category=world&language=en'
       );
       let result = await response.json();
-      if (result.articles && result.articles.length > 0) {
-        setValue(result.articles);
+      if (result.results && result.results.length > 0) {
+        setValue(result.results);
       } else {
-        throw new Error('No articles found');
+        throw new Error('No results found');
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -31,7 +31,7 @@ export const WNPopular = () => {
             <h2 className="text-lg font-bold">Top Read</h2>
           </div>
           <ul className="post-number">
-            {value.slice(0, 8).map((a, key) => (
+            {value.slice(0, 10).map((a, key) => (
               <li
                 className="border-b border-gray-100 hover:bg-gray-50"
                 key={key}
