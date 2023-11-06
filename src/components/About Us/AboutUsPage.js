@@ -1,5 +1,5 @@
 import React from 'react';
-import Puedan from '../assets/Puedan.jpg';
+import Puedan from '/MP2_UtilizingReactTailwindCss/NewsWebsite/src/assets/Puedan.jpg';
 
 export const AboutUsPage = () => {
   return (

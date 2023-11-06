@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {
-  SearchBar,
-  TimeandLoc,
-  TempAndDetails,
-  WeatherForecast,
-  WeatherNews,
-} from '../components';
-import getFormattedWeatherData from '../WeatherJS/AllWeatherData';
+
+import { WeatherNews } from '../components/Weather Trends/WeatherNews';
+import getFormattedWeatherData from '../components/Weather Trends/AllWeatherData/AllWeatherData';
+import { SearchBar } from '../components/Weather Trends/SearchBar';
+import { TempAndDetails } from '../components/Weather Trends/TempAndDetails';
+import { TimeandLoc } from '../components/Weather Trends/TimeandLoc';
+import { WeatherForecast } from '../components/Weather Trends/WeatherForecast';
 
 export const WeatherTrend = () => {
   const [query, setQuery] = useState('Manila');

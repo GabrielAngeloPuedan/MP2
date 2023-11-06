@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconUrlFromCode } from '../WeatherJS/AllWeatherData';
+import { iconUrlFromCode } from './AllWeatherData/AllWeatherData';
 
 export const WeatherForecast = ({ title, items }) => {
   //   console.log(items);

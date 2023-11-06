@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MostPopular, BigNews } from '.';
+import { MostPopular } from './MostPopular';
+import { BigNews } from './BigNews';
 
 export const FeaturedNews = () => {
   const [value, setValue] = useState([]);

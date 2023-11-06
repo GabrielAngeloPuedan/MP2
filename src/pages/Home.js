@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import {
-  HomeHeroSection,
-  GeneralNews,
-  TopStories,
-  FeaturedNews,
-  NewsItems4,
-} from '../components';
+import { NewsItems4 } from '../components/Home/NewsItems4';
+import { FeaturedNews } from '../components/Home/FeaturedNews';
+import { GeneralNews } from '../components/Home/GeneralNews';
+import { HomeHeroSection } from '../components/Home/HomeHeroSection';
+import { TopStories } from '../components/Home/TopStories';
 
 export const Home = () => {
   const [items, setItems] = useState([]);

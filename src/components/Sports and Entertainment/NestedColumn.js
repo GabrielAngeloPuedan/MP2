@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NestedColum2 } from '../components';
+import { NestedColum2 } from './NestedColumn2';
 
 export const NestedColumn = () => {
   const [value, setValue] = useState([]);

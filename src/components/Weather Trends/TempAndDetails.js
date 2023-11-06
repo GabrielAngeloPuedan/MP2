@@ -1,6 +1,6 @@
 import React from 'react';
 import { WiThermometer, WiRaindrop, WiStrongWind } from 'react-icons/wi';
-import { iconUrlFromCode } from '../WeatherJS/AllWeatherData';
+import { iconUrlFromCode } from './AllWeatherData/AllWeatherData';
 
 export const TempAndDetails = ({
   weather: { details, temp, icon, speed, humidity, feels_like },

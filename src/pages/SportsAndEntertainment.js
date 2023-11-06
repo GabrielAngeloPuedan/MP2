@@ -1,5 +1,7 @@
 import React from 'react';
-import { BoxScore, NestedColumn, NestedSportsandEnt } from '../components';
+import { NestedSportsandEnt } from '../components/Sports and Entertainment/NestedSportsandEnt';
+import { BoxScore } from '../components/Sports and Entertainment/BoxScore';
+import { NestedColumn } from '../components/Sports and Entertainment/NestedColumn';
 
 export const SportsAndEntertainment = () => {
   return (

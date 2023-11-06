@@ -1,29 +1,6 @@
 import React from 'react';
-// import SampleImage from '../assets/SampleImage.jpg';
 
 export const NewsItems4 = () => {
-  // const [value, setValue] = useState([]);
-
-  // const api = async () => {
-  //   try {
-  //     let response = await fetch(
-  //       'https://newsapi.org/v2/everything?q=world&apiKey=64153f05e7c049d6ba06e84b92d12f92'
-  //     );
-  //     let result = await response.json();
-  //     if (result.articles && result.articles.length > 0) {
-  //       setValue(result.articles);
-  //     } else {
-  //       throw new Error('No articles found');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error fetching data:', error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   api();
-  // }, []);
-
   return (
     <div className="grid-cols-1 sm:grid md:grid-cols-3 ">
       <div className="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">

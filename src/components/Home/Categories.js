@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { C1SportsAndEnt, C2WeatherTrend, C3Business } from '../components';
+import { C1SportsAndEnt } from './C1SportsAndEnt';
+import { C2WeatherTrend } from './C2WeatherTrend';
+import { C3Business } from './C3Business';
 
 export const Categories = () => {
   const [value, setValue] = useState([]);
