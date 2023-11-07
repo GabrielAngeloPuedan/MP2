@@ -6,7 +6,7 @@ export const WNLatestNews = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://newsdata.io/api/1/news?apikey=pub_3242940853309f42bef3fea891d5a2ab05644&image=1&category=politics&language=en'
+        'https://newsdata.io/api/1/news?apikey=pub_32487a2ae4b5d12ffd1e5c6a7d60bc91f8f78&image=1&category=politics&language=en'
       );
       let result = await response.json();
       if (result.results && result.results.length > 0) {

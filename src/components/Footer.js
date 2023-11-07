@@ -174,7 +174,6 @@ export const Footer = () => {
                     </li>
                   </ul>
                 </div>
-
                 <LEGAL />
               </div>
             </div>

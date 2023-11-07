@@ -8,7 +8,7 @@ export const WNHeroSection = () => {
   const api = async () => {
     try {
       let response = await fetch(
-        'https://newsdata.io/api/1/news?apikey=pub_32187bd5bdcecfa672cc03ccb0509c12ed6f7&q=general&language=en&category=other,top'
+        'https://newsdata.io/api/1/news?apikey=pub_32187bd5bdcecfa672cc03ccb0509c12ed6f7&q=general&language=en&category=other,world'
       );
       let result = await response.json();
       if (result.results && result.results.length > 0) {

@@ -44,7 +44,7 @@ export const WeatherTrend = () => {
                 items={weather.hourly}
               />
             </div>
-            <div className="text-white items-center">
+            <div className="text-white">
               <WeatherForecast
                 title="weekly forecast"
                 items={weather.daily}
